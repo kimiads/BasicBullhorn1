@@ -25,6 +25,30 @@
         <p><a class="btn btn-primary btn-lg" href="/add" role="button">Add a New Message</a></p>
 
     </div>
+
+    <figure>
+        <img src="https://static.thenounproject.com/png/641795-200.png" alt="flamingo" th:width="50" height="50">
+    </figure>
+
+    <table class="table">
+        <thead class="thead-dark"></thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Content</th>
+            <th scope="col">Posted Date</th>
+            <th scope="col">Sent By</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="message : ${messages}">
+            <td th:text="${message.id}"></td>
+            <td th:text="${message.content}"></td>
+            <td th:text="${message.posteddate}"></td>
+            <td th:text="${message.sentby}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -33,19 +57,22 @@
 
 
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Content</th>
-        <th>Posted Date</th>
-        <th>Sent By</th>
-    </tr>
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.id}"></td>
-        <td th:text="${message.content}"></td>
-        <td th:text="${message.posteddate}"></td>
-        <td th:text="${message.sentby}"></td>
-    </tr>
-</table>
+
+
+
+<!--    <tr>-->
+<!--        <th>Id</th>-->
+<!--        <th>Content</th>-->
+<!--        <th>Posted Date</th>-->
+<!--        <th>Sent By</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="message : ${messages}">-->
+<!--        <td th:text="${message.id}"></td>-->
+<!--        <td th:text="${message.content}"></td>-->
+<!--        <td th:text="${message.posteddate}"></td>-->
+<!--        <td th:text="${message.sentby}"></td>-->
+<!--    </tr>-->
+
+
 </body>
 </html>
